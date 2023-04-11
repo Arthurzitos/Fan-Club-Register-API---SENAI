@@ -10,4 +10,6 @@
 
 **Após clonar o projeto:**
 Acessar o diretório: 
-e rodar o seguinte comando com um terminal aberto no diretório indicado: 
+e rodar o seguinte comando com um terminal aberto no diretório indicado: `docker-compose up`
+
+**:**
