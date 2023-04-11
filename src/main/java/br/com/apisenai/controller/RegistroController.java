@@ -14,7 +14,7 @@ public class RegistroController {
     @Autowired
     RegistroService registroService;
 
-    @PostMapping("/createRegister/")
+    @PostMapping("/createRegister")
     public Registro novoRegistro(@RequestBody Registro registro) {
         return registroService.criarRegistro(registro);
     }
@@ -45,6 +45,11 @@ public class RegistroController {
         registroService.atualizarRegistroEmail(email, id);
     }
 
+    @PatchMapping("/updateSenha/{id}/{senha}")
+    public void updateSenha(@PathVariable String senha, @PathVariable Long id){
+        registroService.atualizarRegistroSenha(senha, id);
+    }
+
     @PatchMapping("/updateNome/{id}/{nome}")
     public void updateNome(@PathVariable String nome, @PathVariable Long id){
         registroService.atualizarRegistroNome(nome, id);
@@ -60,10 +65,6 @@ public class RegistroController {
         registroService.atualizarRegistroApelido(apelido, id);
     }
     
-    @PatchMapping("/updateSobreNome/{id}/{senha}")
-    public void updateSenha(@PathVariable String senha, @PathVariable Long id){
-        registroService.atualizarRegistroSenha(senha, id);
-    }
 
     @PutMapping("/updateRegister/{id}")
     public void update(@RequestBody Registro registro, @PathVariable Long id){

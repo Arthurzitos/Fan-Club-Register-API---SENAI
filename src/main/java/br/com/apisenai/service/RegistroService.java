@@ -38,6 +38,10 @@ public class RegistroService {
         registroRepository.atualizaEmail(email, id);
     }
 
+    public void atualizarRegistroSenha(String senha, Long id) {
+        registroRepository.atualizaSenha(senha, id);
+    }
+
     public void atualizarRegistroNome(String nome, Long id) {
         registroRepository.atualizaNome(nome, id);
     }
@@ -45,20 +49,14 @@ public class RegistroService {
     public void atualizarRegistroSobreNome(String sobrenome, Long id) {
         registroRepository.atualizaSobreNome(sobrenome, id);
     }
-    
+
     public void atualizarRegistroApelido(String apelido, Long id) {
         registroRepository.atualizaApelido(apelido, id);
     }
     
-    public void atualizarRegistroSenha(String senha, Long id) {
-        registroRepository.atualizaSenha(senha, id);
-    }
 
     public void atualizarRegistro(Registro registro, Long id) {
         registro.setId(id);
         registroRepository.save(registro);
     }
-
-    
-
 }
