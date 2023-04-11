@@ -14,41 +14,60 @@ public class RegistroController {
     @Autowired
     RegistroService registroService;
 
-    @PostMapping("/")
+    @PostMapping("/createRegister/")
     public Registro novoRegistro(@RequestBody Registro registro) {
         return registroService.criarRegistro(registro);
     }
 
-    @GetMapping("/")
+    @GetMapping("/listRegister")
     public List<Registro> findAll() {
         return registroService.findAll();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/findById/{id}")
     public Registro findById(@PathVariable Long id) {
         return registroService.findById(id)
                 .orElseThrow(IllegalArgumentException::new);
     }
 
-    @GetMapping("/nome/{nome}")
+    @GetMapping("/findByName/{nome}")
     public List<Registro> findByName(@PathVariable String nome) {
         return registroService.findByName(nome);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/deleteRegister/{id}")
     public void deleteById(@PathVariable Long id) {
         registroService.deleteRegistro(id);
     }
 
-    @PatchMapping("/{email}/{id}")
-    public void update(@PathVariable String email, @PathVariable Long id){
+    @PatchMapping("/updateEmail/{id}/{email}")
+    public void updateEmail(@PathVariable String email, @PathVariable Long id){
         registroService.atualizarRegistroEmail(email, id);
     }
 
-    @PutMapping("/{id}")
+    @PatchMapping("/updateNome/{nome}/{id}")
+    public void updateNome(@PathVariable String nome, @PathVariable Long id){
+        registroService.atualizarRegistroNome(nome, id);
+    }
+
+    @PatchMapping("/updateSobreNome/{sobrenome}/{id}")
+    public void updateSobreNome(@PathVariable String sobrenome, @PathVariable Long id){
+        registroService.atualizarRegistroSobreNome(sobrenome, id);
+    }
+    
+    @PatchMapping("/updateApelido/{apelido}/{id}")
+    public void updateApelido(@PathVariable String apelido, @PathVariable Long id){
+        registroService.atualizarRegistroApelido(apelido, id);
+    }
+    
+    @PatchMapping("/updateSobreNome/{senha}/{id}")
+    public void updateSenha(@PathVariable String senha, @PathVariable Long id){
+        registroService.atualizarRegistroSenha(senha, id);
+    }
+
+    @PutMapping("/updateRegister{id}")
     public void update(@RequestBody Registro registro, @PathVariable Long id){
         registroService.atualizarRegistro(registro, id);
     }
-
 
 }
