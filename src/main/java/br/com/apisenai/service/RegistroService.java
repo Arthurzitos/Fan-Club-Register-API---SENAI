@@ -46,8 +46,8 @@ public class RegistroService {
         registroRepository.atualizaSobreNome(sobrenome, id);
     }
     
-    public void atualizarRegistroApelido(String sobrenome, Long id) {
-        registroRepository.atualizaSobreNome(sobrenome, id);
+    public void atualizarRegistroApelido(String apelido, Long id) {
+        registroRepository.atualizaApelido(apelido, id);
     }
     
     public void atualizarRegistroSenha(String senha, Long id) {

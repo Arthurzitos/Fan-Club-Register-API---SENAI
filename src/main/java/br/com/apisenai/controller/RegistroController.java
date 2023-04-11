@@ -45,27 +45,27 @@ public class RegistroController {
         registroService.atualizarRegistroEmail(email, id);
     }
 
-    @PatchMapping("/updateNome/{nome}/{id}")
+    @PatchMapping("/updateNome/{id}/{nome}")
     public void updateNome(@PathVariable String nome, @PathVariable Long id){
         registroService.atualizarRegistroNome(nome, id);
     }
 
-    @PatchMapping("/updateSobreNome/{sobrenome}/{id}")
+    @PatchMapping("/updateSobreNome/{id}/{sobrenome}")
     public void updateSobreNome(@PathVariable String sobrenome, @PathVariable Long id){
         registroService.atualizarRegistroSobreNome(sobrenome, id);
     }
     
-    @PatchMapping("/updateApelido/{apelido}/{id}")
+    @PatchMapping("/updateApelido/{id}/{apelido}")
     public void updateApelido(@PathVariable String apelido, @PathVariable Long id){
         registroService.atualizarRegistroApelido(apelido, id);
     }
     
-    @PatchMapping("/updateSobreNome/{senha}/{id}")
+    @PatchMapping("/updateSobreNome/{id}/{senha}")
     public void updateSenha(@PathVariable String senha, @PathVariable Long id){
         registroService.atualizarRegistroSenha(senha, id);
     }
 
-    @PutMapping("/updateRegister{id}")
+    @PutMapping("/updateRegister/{id}")
     public void update(@RequestBody Registro registro, @PathVariable Long id){
         registroService.atualizarRegistro(registro, id);
     }
