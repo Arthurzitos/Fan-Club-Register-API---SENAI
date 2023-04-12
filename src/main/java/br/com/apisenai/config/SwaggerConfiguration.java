@@ -31,7 +31,7 @@ public class SwaggerConfiguration {
     private ApiInfo infosApi(){
         return new ApiInfoBuilder().version("1.0")
                 .title("Fan Club Register API")
-                .description("API desenvolvida para o gerenciamento de carteirinhas para fã clube")
+                .description("API desenvolvida com finalidades academicas. O contexto proposto pelo grupo foi o cadastro e adesão de novos membros para um fã clube de um time de e-esports")
                 .contact(this.getContato())
                 .termsOfServiceUrl("Termo de uso: Open Source")
                 .license("Licenciada para SENAI")

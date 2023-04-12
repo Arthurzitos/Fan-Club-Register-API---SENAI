@@ -42,16 +42,6 @@ public class RegistroController {
         return registroService.findByName(nome);
     }
 
-    @DeleteMapping("/deleteRegister/{id}")
-    public ResponseEntity<String> deleteById(@PathVariable Long id) {
-        try {
-            registroService.deleteRegistro(id);
-        }catch (Exception exception){
-            return new ResponseEntity<>("Erro ao excluir usuário", HttpStatus.BAD_REQUEST);
-        }
-        return new ResponseEntity<>("Usuário excluído com sucesso!", HttpStatus.CREATED);
-    }
-
     @PatchMapping("/updateEmail/{id}/{email}")
     public ResponseEntity<String> updateEmail(@PathVariable String email, @PathVariable Long id){
         try {
@@ -110,5 +100,15 @@ public class RegistroController {
             return new ResponseEntity<>("Erro ao atualizar registro", HttpStatus.BAD_REQUEST);
         }
         return new ResponseEntity<>("Registro atualizado com sucesso!", HttpStatus.CREATED);
+    }
+
+    @DeleteMapping("/deleteRegister/{id}")
+    public ResponseEntity<String> deleteById(@PathVariable Long id) {
+        try {
+            registroService.deleteRegistro(id);
+        }catch (Exception exception){
+            return new ResponseEntity<>("Erro ao excluir usuário", HttpStatus.BAD_REQUEST);
+        }
+        return new ResponseEntity<>("Usuário excluído com sucesso!", HttpStatus.CREATED);
     }
 }
