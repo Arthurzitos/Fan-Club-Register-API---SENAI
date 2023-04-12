@@ -16,6 +16,7 @@ public class RegistroController {
     @Autowired
     RegistroService registroService;
 
+<<<<<<< HEAD
     @PostMapping("/createRegister/")
     public ResponseEntity<String> novoRegistro(@RequestBody Registro registro) {
         try {
@@ -24,6 +25,11 @@ public class RegistroController {
             return new ResponseEntity<>("Erro ao cadastrar usuário", HttpStatus.BAD_REQUEST);
         }
         return new ResponseEntity<>("Usuário cadastrado com sucesso!", HttpStatus.CREATED);
+=======
+    @PostMapping("/createRegister")
+    public Registro novoRegistro(@RequestBody Registro registro) {
+        return registroService.criarRegistro(registro);
+>>>>>>> a0004fbeea443ccfce002496f600bb8a4723f137
     }
 
     @GetMapping("/listRegister")
@@ -62,6 +68,11 @@ public class RegistroController {
         return new ResponseEntity<>("E-mail atualizado com sucesso!", HttpStatus.CREATED);
     }
 
+    @PatchMapping("/updateSenha/{id}/{senha}")
+    public void updateSenha(@PathVariable String senha, @PathVariable Long id){
+        registroService.atualizarRegistroSenha(senha, id);
+    }
+
     @PatchMapping("/updateNome/{id}/{nome}")
     public ResponseEntity<String> updateNome(@PathVariable String nome, @PathVariable Long id){
         try {
@@ -92,6 +103,7 @@ public class RegistroController {
         return new ResponseEntity<>("Apelido atualizado com sucesso!", HttpStatus.CREATED);
     }
     
+<<<<<<< HEAD
     @PatchMapping("/updateSenha/{id}/{senha}")
     public ResponseEntity<String> updateSenha(@PathVariable String senha, @PathVariable Long id){
         try {
@@ -101,6 +113,8 @@ public class RegistroController {
         }
         return new ResponseEntity<>("Senha atualizada com sucesso!", HttpStatus.CREATED);
     }
+=======
+>>>>>>> a0004fbeea443ccfce002496f600bb8a4723f137
 
     @PutMapping("/updateRegister/{id}")
     public ResponseEntity<String> update(@RequestBody Registro registro, @PathVariable Long id){
