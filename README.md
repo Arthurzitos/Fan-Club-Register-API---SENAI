@@ -9,7 +9,7 @@
 - `VSCode (ou alguma outra IDE)`
 
 **Após clonar o projeto:**
-Acessar o diretório: 
+Acessar o diretório: `\src\main\java\br\com\apisenai` onde o arquivo `docker-compose.yaml` se encontra </br>
 e rodar o seguinte comando com um terminal aberto no diretório indicado: `docker-compose up`
 
 **:**
