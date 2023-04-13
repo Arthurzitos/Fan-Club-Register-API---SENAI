@@ -2,14 +2,11 @@
 
 # 🛠️ Abrir e rodar o projeto
 
-**Será necessário:**
-- `Docker Desktop`
-- `Dbeaver`
-- `Postman`
-- `VSCode (ou alguma outra IDE)`
+**Acessar o documento abaixo e seguir as instruções:**
+https://docs.google.com/document/d/15YlPfIwvjLEVnT3ax-M6-NTuH96imhMef97O-kIVoZY/edit?usp=sharing
 
-**Após clonar o projeto:**
-Acessar o diretório: `\src\main\java\br\com\apisenai` onde o arquivo `docker-compose.yaml` se encontra </br>
-e rodar o seguinte comando com um terminal aberto no diretório indicado: `docker-compose up`
 
-**:**
+
+
+
+OBS: Documento em formato .docx também está disponível para download juntamente com o postman_collection.json na pasta raiz do projeto.
