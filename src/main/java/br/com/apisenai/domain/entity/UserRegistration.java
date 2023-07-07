@@ -18,10 +18,10 @@ public class UserRegistration implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nome;
-    private String sobrenome;
-    private String apelido;
+    private String name;
+    private String surname;
+    private String nickname;
     private String email;
-    private String senha;
-    private String foto;
+    private String password;
+    private String photo;
 }

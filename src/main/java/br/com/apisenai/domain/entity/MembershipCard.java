@@ -18,7 +18,7 @@ public class MembershipCard implements Serializable {
     private Long id;
 
     @OneToOne
-    @JoinColumn(name = "userRegistration_id")
+    @JoinColumn(name = "UserRegistration_id")
     private UserRegistration userRegistration; // Relacionamento com o cadastro do usuário
 
     private LocalDate joiningDate;

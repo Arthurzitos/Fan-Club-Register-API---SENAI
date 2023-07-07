@@ -13,7 +13,7 @@ public class FanClubAdminService {
     @Autowired
     FanClubAdminRepository fanClubAdminRepository;
 
-    public FanClubAdmin criarFanClubAdmin(FanClubAdmin FanClubAdmin) {
+    public FanClubAdmin createFanClubAdmin(FanClubAdmin FanClubAdmin) {
         return fanClubAdminRepository.save(FanClubAdmin);
     }
 
@@ -25,31 +25,33 @@ public class FanClubAdminService {
         return fanClubAdminRepository.findById(id);
     }
 
-    public List<FanClubAdmin> findByName(String nome) {
-        return fanClubAdminRepository.findFanClubAdminsByNomeIgnoreCase(nome);
+    public List<FanClubAdmin> findByName(String name) {
+        return fanClubAdminRepository.findFanClubAdminsByName(name);
     }
 
     public void deleteFanClubAdmin(Long id) {
+
         fanClubAdminRepository.deleteById(id);
     }
 
-    public void atualizarFanClubAdminEmail(String email, Long id) {
-        fanClubAdminRepository.atualizaEmail(email, id);
+    public void updateFanClubAdminEmail(String email, Long id) {
+
+        fanClubAdminRepository.updateEmail(email, id);
     }
 
-    public void atualizarFanClubAdminSenha(String senha, Long id) {
-        fanClubAdminRepository.atualizaSenha(senha, id);
+    public void updateFanClubAdminPassword(String password, Long id) {
+        fanClubAdminRepository.updatePassword(password, id);
     }
 
-    public void atualizarFanClubAdminNome(String nome, Long id) {
-        fanClubAdminRepository.atualizaNome(nome, id);
+    public void updateFanClubAdminName(String name, Long id) {
+        fanClubAdminRepository.updateName(name, id);
     }
 
-    public void atualizarFanClubAdminSobreNome(String sobrenome, Long id) {
-        fanClubAdminRepository.atualizaSobreNome(sobrenome, id);
+    public void updateFanClubAdminSurname(String surname, Long id) {
+        fanClubAdminRepository.updateSurname(surname, id);
     }
    
-    public void atualizarFanClubAdmin(FanClubAdmin FanClubAdmin, Long id) {
+    public void updateFanClubAdmin(FanClubAdmin FanClubAdmin, Long id) {
         FanClubAdmin.setId(id);
         fanClubAdminRepository.save(FanClubAdmin);
     }

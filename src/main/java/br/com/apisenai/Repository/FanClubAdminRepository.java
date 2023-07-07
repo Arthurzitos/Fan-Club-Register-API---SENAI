@@ -14,22 +14,22 @@ public interface FanClubAdminRepository extends JpaRepository<FanClubAdmin, Long
     @Transactional
     @Modifying
     @Query("update FanClubAdmin r set r.email = ?1 where r.id = ?2")
-    void atualizaEmail(String email, Long Id);
+    void updateEmail(String email, Long Id);
 
     @Transactional
     @Modifying
-    @Query("update FanClubAdmin r set r.senha = ?1 where r.id = ?2")
-    void atualizaSenha(String senha, Long Id);
+    @Query("update FanClubAdmin r set r.password = ?1 where r.id = ?2")
+    void updatePassword(String password, Long Id);
 
     @Transactional
     @Modifying
-    @Query("update FanClubAdmin r set r.nome = ?1 where r.id = ?2")
-    void atualizaNome(String nome, Long Id);
+    @Query("update FanClubAdmin r set r.name = ?1 where r.id = ?2")
+    void updateName(String name, Long Id);
 
     @Transactional
     @Modifying
-    @Query("update FanClubAdmin r set r.sobrenome = ?1 where r.id = ?2")
-    void atualizaSobreNome(String sobrenome, Long Id);
+    @Query("update FanClubAdmin r set r.surname = ?1 where r.id = ?2")
+    void updateSurname(String surname, Long Id);
 
-    List<FanClubAdmin> findFanClubAdminsByNomeIgnoreCase(String nome);
+    List<FanClubAdmin> findFanClubAdminsByName(String name);
 }

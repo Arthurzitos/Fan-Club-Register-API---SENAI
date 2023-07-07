@@ -17,9 +17,9 @@ public class FanClubAdminController {
     FanClubAdminService fanClubAdminService;
 
     @PostMapping("/createFanClubAdmin/")
-    public ResponseEntity<String> novoFanClubAdmin(@RequestBody FanClubAdmin fanClubAdmin) {
+    public ResponseEntity<String> newFanClubAdmin(@RequestBody FanClubAdmin fanClubAdmin) {
         try {
-            fanClubAdminService.criarFanClubAdmin(fanClubAdmin);
+            fanClubAdminService.createFanClubAdmin(fanClubAdmin);
         }catch (Exception exception){
             return new ResponseEntity<>("Erro ao cadastrar admin", HttpStatus.BAD_REQUEST);
         }
@@ -38,44 +38,44 @@ public class FanClubAdminController {
     }
 
     @GetMapping("/findFanClubAdminByName/{nome}")
-    public List<FanClubAdmin> findByName(@PathVariable String nome) {
-        return fanClubAdminService.findByName(nome);
+    public List<FanClubAdmin> findByName(@PathVariable String name) {
+        return fanClubAdminService.findByName(name);
     }
 
     @PatchMapping("/updateFanClubAdminEmail/{id}/{email}")
     public ResponseEntity<String> updateEmail(@PathVariable String email, @PathVariable Long id){
         try {
-            fanClubAdminService.atualizarFanClubAdminEmail(email, id);
+            fanClubAdminService.updateFanClubAdminEmail(email, id);
         }catch (Exception exception){
             return new ResponseEntity<>("Erro ao atualizar e-mail", HttpStatus.BAD_REQUEST);
         }
         return new ResponseEntity<>("E-mail atualizado com sucesso!", HttpStatus.CREATED);
     }
 
-    @PatchMapping("/updateFanClubAdminSenha/{id}/{senha}")
-    public ResponseEntity<String> updateSenha(@PathVariable String senha, @PathVariable Long id){
+    @PatchMapping("/updateFanClubAdminSenha/{id}/{password}")
+    public ResponseEntity<String> updatePassword(@PathVariable String password, @PathVariable Long id){
         try {
-            fanClubAdminService.atualizarFanClubAdminSenha(senha, id);
+            fanClubAdminService.updateFanClubAdminPassword(password, id);
         }catch (Exception exception){
             return new ResponseEntity<>("Erro ao atualizar senha", HttpStatus.BAD_REQUEST);
         }
         return new ResponseEntity<>("Senha atualizada com sucesso!", HttpStatus.CREATED);
     }
 
-    @PatchMapping("/updateFanClubAdminNome/{id}/{nome}")
-    public ResponseEntity<String> updateNome(@PathVariable String nome, @PathVariable Long id){
+    @PatchMapping("/updateFanClubAdminNome/{id}/{name}")
+    public ResponseEntity<String> updateName(@PathVariable String name, @PathVariable Long id){
         try {
-            fanClubAdminService.atualizarFanClubAdminNome(nome, id);
+            fanClubAdminService.updateFanClubAdminName(name, id);
         }catch (Exception exception){
             return new ResponseEntity<>("Erro ao atualizar nome", HttpStatus.BAD_REQUEST);
         }
         return new ResponseEntity<>("Nome atualizado com sucesso!", HttpStatus.CREATED);
     }
 
-    @PatchMapping("/updateFanClubAdminSobrenome/{id}/{sobrenome}")
-    public ResponseEntity<String> updateSobreNome(@PathVariable String sobrenome, @PathVariable Long id){
+    @PatchMapping("/updateFanClubAdminSobrenome/{id}/{surname}")
+    public ResponseEntity<String> updateSobreNome(@PathVariable String surname, @PathVariable Long id){
         try {
-            fanClubAdminService.atualizarFanClubAdminSobreNome(sobrenome, id);
+            fanClubAdminService.updateFanClubAdminSurname(surname, id);
         }catch (Exception exception){
             return new ResponseEntity<>("Erro ao atualizar sobrenome", HttpStatus.BAD_REQUEST);
         }
@@ -85,7 +85,7 @@ public class FanClubAdminController {
     @PutMapping("/updateFanClubAdmin/{id}")
     public ResponseEntity<String> update(@RequestBody FanClubAdmin fanClubAdmin, @PathVariable Long id){
         try {
-            fanClubAdminService.atualizarFanClubAdmin(fanClubAdmin, id);
+            fanClubAdminService.updateFanClubAdmin(fanClubAdmin, id);
         }catch (Exception exception){
             return new ResponseEntity<>("Erro ao atualizar admin", HttpStatus.BAD_REQUEST);
         }

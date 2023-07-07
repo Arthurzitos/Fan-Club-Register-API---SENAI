@@ -14,7 +14,7 @@ public class UserRegistrationService {
     @Autowired
     UserRegistrationRepository userRegistrationRepository;
 
-    public UserRegistration criarRegistro(UserRegistration userRegistration) {
+    public UserRegistration createRegister(UserRegistration userRegistration) {
         return userRegistrationRepository.save(userRegistration);
     }
 
@@ -27,35 +27,35 @@ public class UserRegistrationService {
     }
 
     public List<UserRegistration> findByName(String nome) {
-        return userRegistrationRepository.findRegistrosByNomeIgnoreCase(nome);
+        return userRegistrationRepository.findRegistrosByNameIgnoreCase(nome);
     }
 
-    public void deleteRegistro(Long id) {
+    public void deleteRegister(Long id) {
         userRegistrationRepository.deleteById(id);
     }
 
-    public void atualizarRegistroEmail(String email, Long id) {
-        userRegistrationRepository.atualizaEmail(email, id);
+    public void updateRegisterEmail(String email, Long id) {
+        userRegistrationRepository.updateEmail(email, id);
     }
 
-    public void atualizarRegistroSenha(String senha, Long id) {
-        userRegistrationRepository.atualizaSenha(senha, id);
+    public void updateRegisterPassword(String password, Long id) {
+        userRegistrationRepository.updatePassword(password, id);
     }
 
-    public void atualizarRegistroNome(String nome, Long id) {
-        userRegistrationRepository.atualizaNome(nome, id);
+    public void updateRegisterName(String name, Long id) {
+        userRegistrationRepository.updateName(name, id);
     }
 
-    public void atualizarRegistroSobreNome(String sobrenome, Long id) {
-        userRegistrationRepository.atualizaSobreNome(sobrenome, id);
+    public void updateRegisterSurname(String surname, Long id) {
+        userRegistrationRepository.updateSurname(surname, id);
     }
 
-    public void atualizarRegistroApelido(String apelido, Long id) {
-        userRegistrationRepository.atualizaApelido(apelido, id);
+    public void updateRegisterNickname(String nickname, Long id) {
+        userRegistrationRepository.updateNickname(nickname, id);
     }
     
 
-    public void atualizarRegistro(UserRegistration userRegistration, Long id) {
+    public void updateRegister(UserRegistration userRegistration, Long id) {
         userRegistration.setId(id);
         userRegistrationRepository.save(userRegistration);
     }

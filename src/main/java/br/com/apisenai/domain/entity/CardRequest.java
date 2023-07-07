@@ -20,9 +20,9 @@ public class CardRequest implements Serializable {
     private LocalDate requestDate;
     private CardStatus cardStatus;
     public enum CardStatus {
-        SOLICITAR,
-        SOLICITADO,
-        PRODUZIDO,
-        ENVIADO
+        REQUEST,
+        REQUESTED,
+        PRODUCED,
+        SENT
     }
 }

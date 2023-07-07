@@ -14,27 +14,27 @@ public interface UserRegistrationRepository extends JpaRepository<UserRegistrati
     @Transactional
     @Modifying
     @Query("update UserRegistration r set r.email = ?1 where r.id = ?2")
-    void atualizaEmail(String email, Long id);
+    void updateEmail(String email, Long id);
 
     @Transactional
     @Modifying
-    @Query("update UserRegistration r set r.senha = ?1 where r.id = ?2")
-    void atualizaSenha(String senha, Long id);
+    @Query("update UserRegistration r set r.password = ?1 where r.id = ?2")
+    void updatePassword(String password, Long id);
 
     @Transactional
     @Modifying
-    @Query("update UserRegistration r set r.nome = ?1 where r.id = ?2")
-    void atualizaNome(String nome, Long id);
+    @Query("update UserRegistration r set r.name = ?1 where r.id = ?2")
+    void updateName(String name, Long id);
 
     @Transactional
     @Modifying
-    @Query("update UserRegistration r set r.sobrenome = ?1 where r.id = ?2")
-    void atualizaSobreNome(String sobrenome, Long id);
+    @Query("update UserRegistration r set r.surname = ?1 where r.id = ?2")
+    void updateSurname(String surname, Long id);
 
     @Transactional
     @Modifying
-    @Query("update UserRegistration r set r.apelido = ?1 where r.id = ?2")
-    void atualizaApelido(String apelido, Long id);
+    @Query("update UserRegistration r set r.nickname = ?1 where r.id = ?2")
+    void updateNickname(String nickname, Long id);
 
-    List<UserRegistration> findRegistrosByNomeIgnoreCase(String nome);
+    List<UserRegistration> findRegistrosByNameIgnoreCase(String name);
 }
