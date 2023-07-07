@@ -1,7 +1,7 @@
 package br.com.apisenai.controller;
 
-import br.com.apisenai.domain.entity.Registro;
-import br.com.apisenai.service.RegistroService;
+import br.com.apisenai.domain.entity.UserRegistration;
+import br.com.apisenai.service.UserRegistrationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,16 +10,16 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController()
-@RequestMapping("/registro")
-public class RegistroController {
+@RequestMapping("/userRegister")
+public class UserRegistrationController {
 
     @Autowired
-    RegistroService registroService;
+    UserRegistrationService userRegistrationService;
 
     @PostMapping("/createRegister/")
-    public ResponseEntity<String> novoRegistro(@RequestBody Registro registro) {
+    public ResponseEntity<String> novoRegistro(@RequestBody UserRegistration userRegistration) {
         try {
-            registroService.criarRegistro(registro);
+            userRegistrationService.criarRegistro(userRegistration);
         }catch (Exception exception){
             return new ResponseEntity<>("Erro ao cadastrar usuário", HttpStatus.BAD_REQUEST);
         }
@@ -27,25 +27,25 @@ public class RegistroController {
     }
 
     @GetMapping("/listRegister")
-    public List<Registro> findAll() {
-        return registroService.findAll();
+    public List<UserRegistration> findAll() {
+        return userRegistrationService.findAll();
     }
 
     @GetMapping("/findById/{id}")
-    public Registro findById(@PathVariable Long id) {
-        return registroService.findById(id)
+    public UserRegistration findById(@PathVariable Long id) {
+        return userRegistrationService.findById(id)
                 .orElseThrow(IllegalArgumentException::new);
     }
 
     @GetMapping("/findByName/{nome}")
-    public List<Registro> findByName(@PathVariable String nome) {
-        return registroService.findByName(nome);
+    public List<UserRegistration> findByName(@PathVariable String nome) {
+        return userRegistrationService.findByName(nome);
     }
 
     @PatchMapping("/updateEmail/{id}/{email}")
     public ResponseEntity<String> updateEmail(@PathVariable String email, @PathVariable Long id){
         try {
-            registroService.atualizarRegistroEmail(email, id);
+            userRegistrationService.atualizarRegistroEmail(email, id);
         }catch (Exception exception){
             return new ResponseEntity<>("Erro ao atualizar e-mail", HttpStatus.BAD_REQUEST);
         }
@@ -55,7 +55,7 @@ public class RegistroController {
     @PatchMapping("/updateSenha/{id}/{senha}")
     public ResponseEntity<String> updateSenha(@PathVariable String senha, @PathVariable Long id){
         try {
-            registroService.atualizarRegistroSenha(senha, id);
+            userRegistrationService.atualizarRegistroSenha(senha, id);
         }catch (Exception exception){
             return new ResponseEntity<>("Erro ao atualizar senha", HttpStatus.BAD_REQUEST);
         }
@@ -65,7 +65,7 @@ public class RegistroController {
     @PatchMapping("/updateNome/{id}/{nome}")
     public ResponseEntity<String> updateNome(@PathVariable String nome, @PathVariable Long id){
         try {
-            registroService.atualizarRegistroNome(nome, id);
+            userRegistrationService.atualizarRegistroNome(nome, id);
         }catch (Exception exception){
             return new ResponseEntity<>("Erro ao atualizar nome", HttpStatus.BAD_REQUEST);
         }
@@ -75,7 +75,7 @@ public class RegistroController {
     @PatchMapping("/updateSobreNome/{id}/{sobrenome}")
     public ResponseEntity<String> updateSobreNome(@PathVariable String sobrenome, @PathVariable Long id){
         try {
-            registroService.atualizarRegistroSobreNome(sobrenome, id);
+            userRegistrationService.atualizarRegistroSobreNome(sobrenome, id);
         }catch (Exception exception){
             return new ResponseEntity<>("Erro ao atualizar sobrenome", HttpStatus.BAD_REQUEST);
         }
@@ -85,7 +85,7 @@ public class RegistroController {
     @PatchMapping("/updateApelido/{id}/{apelido}")
     public ResponseEntity<String> updateApelido(@PathVariable String apelido, @PathVariable Long id){
         try {
-            registroService.atualizarRegistroApelido(apelido, id);
+            userRegistrationService.atualizarRegistroApelido(apelido, id);
         }catch (Exception exception){
             return new ResponseEntity<>("Erro ao atualizar apelido", HttpStatus.BAD_REQUEST);
         }
@@ -93,9 +93,9 @@ public class RegistroController {
     }
 
     @PutMapping("/updateRegister/{id}")
-    public ResponseEntity<String> update(@RequestBody Registro registro, @PathVariable Long id){
+    public ResponseEntity<String> update(@RequestBody UserRegistration userRegistration, @PathVariable Long id){
         try {
-            registroService.atualizarRegistro(registro, id);
+            userRegistrationService.atualizarRegistro(userRegistration, id);
         }catch (Exception exception){
             return new ResponseEntity<>("Erro ao atualizar registro", HttpStatus.BAD_REQUEST);
         }
@@ -105,7 +105,7 @@ public class RegistroController {
     @DeleteMapping("/deleteRegister/{id}")
     public ResponseEntity<String> deleteById(@PathVariable Long id) {
         try {
-            registroService.deleteRegistro(id);
+            userRegistrationService.deleteRegistro(id);
         }catch (Exception exception){
             return new ResponseEntity<>("Erro ao excluir usuário", HttpStatus.BAD_REQUEST);
         }
