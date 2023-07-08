@@ -21,5 +21,5 @@ public interface FanClubRepository extends JpaRepository<FanClub, Long> {
     @Query("update FanClub r set r.fanClubDescription = ?1 where r.id = ?2")
     void updateFanClubDescription(String fanClubDescription, Long Id);
 
-    List<FanClub> findFanClubByName(String fanClubName);
+    List<FanClub> findByFanClubName(String fanClubName);
 }

@@ -39,7 +39,7 @@ public class FanClubController {
 
     @GetMapping("/findFanClubByName/{fanClubName}")
     public List<FanClub> findFanClubByName(@PathVariable String fanClubName) {
-        return fanClubService.findFanClubByName(fanClubName);
+        return fanClubService.findByFanClubName(fanClubName);
     }
 
     @PatchMapping("/updateName/{id}/{fanClubName}")

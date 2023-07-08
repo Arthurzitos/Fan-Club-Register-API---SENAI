@@ -26,8 +26,8 @@ public class FanClubService {
         return fanClubRepository.findById(id);
     }
 
-    public List<FanClub> findFanClubByName(String fanClubName) {
-        return fanClubRepository.findFanClubByName(fanClubName);
+    public List<FanClub> findByFanClubName(String fanClubName) {
+        return fanClubRepository.findByFanClubName(fanClubName);
     }
 
     public void deleteFanClub(Long id) {
