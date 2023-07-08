@@ -43,7 +43,7 @@ public class FanClubController {
     }
 
     @PatchMapping("/updateName/{id}/{fanClubName}")
-    public ResponseEntity<String> updatefanClubName(@PathVariable String fanClubName, @PathVariable Long id){
+    public ResponseEntity<String> updateFanClubName(@PathVariable String fanClubName, @PathVariable Long id){
         try {
             fanClubService.updateFanClubName(fanClubName, id);
         }catch (Exception exception){
@@ -53,7 +53,7 @@ public class FanClubController {
     }
 
     @PatchMapping("/updateDescription/{id}/{fanClubDescription}")
-    public ResponseEntity<String> updatefanClubDescription(@PathVariable String fanClubDescription, @PathVariable Long id){
+    public ResponseEntity<String> updateFanClubDescription(@PathVariable String fanClubDescription, @PathVariable Long id){
         try {
             fanClubService.updateFanClubDescription(fanClubDescription, id);
         }catch (Exception exception){
