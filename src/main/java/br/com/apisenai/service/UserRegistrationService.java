@@ -27,7 +27,7 @@ public class UserRegistrationService {
     }
 
     public List<UserRegistration> findByName(String nome) {
-        return userRegistrationRepository.findRegistrosByNameIgnoreCase(nome);
+        return userRegistrationRepository.findRegistersByNameIgnoreCase(nome);
     }
 
     public void deleteRegister(Long id) {

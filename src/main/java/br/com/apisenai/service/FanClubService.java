@@ -34,12 +34,12 @@ public class FanClubService {
         fanClubRepository.deleteById(id);
     }
 
-    public void updateName(String name, Long id) {
-        fanClubRepository.updateFanClubName(name, id);
+    public void updateFanClubName(String fanClubName, Long id) {
+        fanClubRepository.updateFanClubName(fanClubName, id);
     }
 
-    public void updateDescription(String description, Long id) {
-        fanClubRepository.updateFanClubDescription(description, id);
+    public void updateFanClubDescription(String fanClubDescription, Long id) {
+        fanClubRepository.updateFanClubDescription(fanClubDescription, id);
     }
 
 }

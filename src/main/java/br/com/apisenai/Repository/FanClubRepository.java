@@ -19,7 +19,7 @@ public interface FanClubRepository extends JpaRepository<FanClub, Long> {
     @Transactional
     @Modifying
     @Query("update FanClub r set r.fanClubDescription = ?1 where r.id = ?2")
-    void updateFanClubDescription(String description, Long Id);
+    void updateFanClubDescription(String fanClubDescription, Long Id);
 
     List<FanClub> findFanClubByName(String fanClubName);
 }

@@ -37,25 +37,25 @@ public class FanClubController {
                 .orElseThrow(IllegalArgumentException::new);
     }
 
-    @GetMapping("/findFanClubByName/{name}")
-    public List<FanClub> findFanClubByName(@PathVariable String name) {
-        return fanClubService.findFanClubByName(name);
+    @GetMapping("/findFanClubByName/{fanClubName}")
+    public List<FanClub> findFanClubByName(@PathVariable String fanClubName) {
+        return fanClubService.findFanClubByName(fanClubName);
     }
 
-    @PatchMapping("/updateName/{id}/{name}")
-    public ResponseEntity<String> updateName(@PathVariable String name, @PathVariable Long id){
+    @PatchMapping("/updateName/{id}/{fanClubName}")
+    public ResponseEntity<String> updatefanClubName(@PathVariable String fanClubName, @PathVariable Long id){
         try {
-            fanClubService.updateName(name, id);
+            fanClubService.updateFanClubName(fanClubName, id);
         }catch (Exception exception){
-            return new ResponseEntity<>("Erro ao atualizar nome", HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>("Erro ao atualizar nome do fa clube", HttpStatus.BAD_REQUEST);
         }
-        return new ResponseEntity<>("Nome atualizado com sucesso!", HttpStatus.CREATED);
+        return new ResponseEntity<>("Nome do fa clube atualizado com sucesso!", HttpStatus.CREATED);
     }
 
-    @PatchMapping("/updateDescription/{id}/{description}")
-    public ResponseEntity<String> updateDescription(@PathVariable String description, @PathVariable Long id){
+    @PatchMapping("/updateDescription/{id}/{fanClubDescription}")
+    public ResponseEntity<String> updatefanClubDescription(@PathVariable String fanClubDescription, @PathVariable Long id){
         try {
-            fanClubService.updateDescription(description, id);
+            fanClubService.updateFanClubDescription(fanClubDescription, id);
         }catch (Exception exception){
             return new ResponseEntity<>("Erro ao atualizar descricao", HttpStatus.BAD_REQUEST);
         }

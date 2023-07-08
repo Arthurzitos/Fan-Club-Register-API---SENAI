@@ -38,8 +38,8 @@ public class UserRegistrationController {
     }
 
     @GetMapping("/findByName/{name}")
-    public List<UserRegistration> findByName(@PathVariable String nome) {
-        return userRegistrationService.findByName(nome);
+    public List<UserRegistration> findByName(@PathVariable String name) {
+        return userRegistrationService.findByName(name);
     }
 
     @PatchMapping("/updateEmail/{id}/{email}")

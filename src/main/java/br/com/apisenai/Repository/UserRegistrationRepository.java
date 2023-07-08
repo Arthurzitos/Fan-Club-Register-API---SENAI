@@ -36,5 +36,5 @@ public interface UserRegistrationRepository extends JpaRepository<UserRegistrati
     @Query("update UserRegistration r set r.nickname = ?1 where r.id = ?2")
     void updateNickname(String nickname, Long id);
 
-    List<UserRegistration> findRegistrosByNameIgnoreCase(String name);
+    List<UserRegistration> findRegistersByNameIgnoreCase(String name);
 }
