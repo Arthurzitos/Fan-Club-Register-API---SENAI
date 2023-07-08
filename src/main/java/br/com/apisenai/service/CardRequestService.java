@@ -19,6 +19,10 @@ public class CardRequestService {
         cardRequest.setCardStatus(cardStatus);
     }
 
+    public List<CardRequest> findAll() {
+        return cardRequestRepository.findAll();
+    }
+
     public void updateCardStatus(CardRequest.CardStatus cardStatus, Long id) {
         cardRequestRepository.updateCardStatus(cardStatus, id);
     }

@@ -1,5 +1,6 @@
 package br.com.apisenai.Repository;
 
+import br.com.apisenai.domain.entity.CardRequest;
 import br.com.apisenai.domain.entity.MembershipCard;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
@@ -23,8 +24,8 @@ public interface MembershipCardRepository extends JpaRepository<MembershipCard, 
 
     @Transactional
     @Modifying
-    @Query("update MembershipCard r set r.isActive = ?1 where r.id = ?2")
-    boolean updateMembershipCardActivation(boolean isActive, Long Id);
+    @Query("update MembershipCard r set r.cardStatus = ?1 where r.id = ?2")
+    void updateMembershipCardStatus(CardRequest.CardStatus cardStatus, Long Id);
 
     List<MembershipCard> findCardByCardNumber(String cardNumber);
 }

@@ -21,9 +21,9 @@ public class FanClubController {
         try {
             fanClubService.createFanClub(fanClub);
         }catch (Exception exception){
-            return new ResponseEntity<>("Erro ao cadastrar usuário", HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>("Erro ao cadastrar fa clube", HttpStatus.BAD_REQUEST);
         }
-        return new ResponseEntity<>("Usuário cadastrado com sucesso!", HttpStatus.CREATED);
+        return new ResponseEntity<>("Fa clube cadastrado com sucesso!", HttpStatus.CREATED);
     }
 
     @GetMapping("/listFanClub")

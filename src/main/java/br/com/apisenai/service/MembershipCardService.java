@@ -1,6 +1,7 @@
 package br.com.apisenai.service;
 
 import br.com.apisenai.Repository.MembershipCardRepository;
+import br.com.apisenai.domain.entity.CardRequest;
 import br.com.apisenai.domain.entity.MembershipCard;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,9 +31,8 @@ public class MembershipCardService {
         membershipCardRepository.updateMembershipCardPhotoUrl(photoUrl, id);
     }
 
-    public boolean updateMembershipCardActivation(boolean isActive, Long id) {
-        membershipCardRepository.updateMembershipCardActivation(isActive, id);
-        return isActive;
+    public void updateMembershipCardStatus(CardRequest.CardStatus cardStatus, Long id) {
+        membershipCardRepository.updateMembershipCardStatus(cardStatus, id);
     }
 
     public List<MembershipCard> findAll() {

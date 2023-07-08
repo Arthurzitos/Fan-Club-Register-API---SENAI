@@ -16,7 +16,7 @@ public class FanClubAdminController {
     @Autowired
     FanClubAdminService fanClubAdminService;
 
-    @PostMapping("/createFanClubAdmin/")
+    @PostMapping("/createFanClubAdmin")
     public ResponseEntity<String> newFanClubAdmin(@RequestBody FanClubAdmin fanClubAdmin) {
         try {
             fanClubAdminService.createFanClubAdmin(fanClubAdmin);
@@ -37,7 +37,7 @@ public class FanClubAdminController {
                 .orElseThrow(IllegalArgumentException::new);
     }
 
-    @GetMapping("/findFanClubAdminByName/{nome}")
+    @GetMapping("/findFanClubAdminByName/{name}")
     public List<FanClubAdmin> findByName(@PathVariable String name) {
         return fanClubAdminService.findByName(name);
     }

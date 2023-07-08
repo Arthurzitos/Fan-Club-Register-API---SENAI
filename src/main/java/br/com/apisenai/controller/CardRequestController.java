@@ -21,6 +21,10 @@ public class CardRequestController {
         return cardRequestService.findCardRequestById(id);
     }
 
+    @GetMapping("/listCardRequest")
+    public List<CardRequest> findAll() {
+        return cardRequestService.findAll();
+    }
     @PatchMapping("/setCardStatus/{id}/{cardStatus}")
     public ResponseEntity<String> setCardStatus(@PathVariable Long id, @PathVariable CardRequest.CardStatus cardStatus) {
         try {

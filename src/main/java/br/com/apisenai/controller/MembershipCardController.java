@@ -1,5 +1,6 @@
 package br.com.apisenai.controller;
 
+import br.com.apisenai.domain.entity.CardRequest;
 import br.com.apisenai.domain.entity.MembershipCard;
 import br.com.apisenai.service.MembershipCardService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController()
-@RequestMapping("/MembershipCard")
+@RequestMapping("/membershipCard")
 public class MembershipCardController {
 
     @Autowired
@@ -21,7 +22,7 @@ public class MembershipCardController {
         return membershipCardService.findAll();
     }
 
-    @PostMapping("/createMembershipCard/")
+    @PostMapping("/createMembershipCard")
     public ResponseEntity<String> createMembershipCard(@RequestBody MembershipCard membershipCard) {
         try {
             membershipCardService.createMembershipCard(membershipCard);
@@ -62,14 +63,14 @@ public class MembershipCardController {
         return new ResponseEntity<>("Foto da carteirinha atualizado com sucesso!", HttpStatus.CREATED);
     }
 
-    @PatchMapping("/updateMembershipCardActivation/{id}/{isActive}")
-    public ResponseEntity<String> updateMembershipCardActivation(@PathVariable boolean isActive, @PathVariable Long id){
+    @PatchMapping("/updateMembershipCardStatus/{id}/{cardStatus}")
+    public ResponseEntity<String> updateMembershipCardStatus(@PathVariable CardRequest.CardStatus cardStatus, @PathVariable Long id){
         try {
-            membershipCardService.updateMembershipCardActivation(isActive, id);
+            membershipCardService.updateMembershipCardStatus(cardStatus, id);
         }catch (Exception exception){
-            return new ResponseEntity<>("Erro ao atualizar status de ativacao da carteirinha", HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>("Erro ao atualizar status da carteirinha", HttpStatus.BAD_REQUEST);
         }
-        return new ResponseEntity<>("Status de ativacao da carteirinha atualizada com sucesso!", HttpStatus.CREATED);
+        return new ResponseEntity<>("Status da carteirinha atualizada com sucesso!", HttpStatus.CREATED);
     }
 
     @DeleteMapping("/deleteMembershipCardById/{id}")

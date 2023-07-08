@@ -24,5 +24,5 @@ public class MembershipCard implements Serializable {
     private LocalDate joiningDate;
     private String cardNumber;
     private String photoUrl;
-    private boolean isActive;
+    private CardRequest.CardStatus cardStatus; // Status da carteirinha
 }
