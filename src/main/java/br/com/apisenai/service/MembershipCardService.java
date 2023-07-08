@@ -44,7 +44,7 @@ public class MembershipCardService {
         return membershipCardRepository.findById(id);
     }
 
-    public List<MembershipCard> findCardByNumber(String cardNumber) {
-        return membershipCardRepository.findCardByNumber(cardNumber);
+    public List<MembershipCard> findCardByCardNumber(String cardNumber) {
+        return membershipCardRepository.findCardByCardNumber(cardNumber);
     }
 }

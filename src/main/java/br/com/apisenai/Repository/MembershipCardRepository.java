@@ -26,5 +26,5 @@ public interface MembershipCardRepository extends JpaRepository<MembershipCard, 
     @Query("update MembershipCard r set r.isActive = ?1 where r.id = ?2")
     boolean updateMembershipCardActivation(boolean isActive, Long Id);
 
-    List<MembershipCard> findCardByNumber(String cardNumber);
+    List<MembershipCard> findCardByCardNumber(String cardNumber);
 }

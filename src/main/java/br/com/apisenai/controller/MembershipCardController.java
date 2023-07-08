@@ -37,9 +37,9 @@ public class MembershipCardController {
                 .orElseThrow(IllegalArgumentException::new);
     }
 
-    @GetMapping("/findCardByNumber/{cardNumber}")
+    @GetMapping("/findCardByCardNumber/{cardNumber}")
     public List<MembershipCard> findCardByNumber(@PathVariable String cardNumber) {
-        return membershipCardService.findCardByNumber(cardNumber);
+        return membershipCardService.findCardByCardNumber(cardNumber);
     }
 
     @PatchMapping("/updateMembershipCardNumber/{id}/{cardNumber}")
