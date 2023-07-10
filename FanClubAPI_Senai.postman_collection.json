@@ -1,0 +1,1083 @@
+{
+	"info": {
+		"_postman_id": "444bed38-882b-4f41-a9f6-35e3a4e58e16",
+		"name": "API SENAI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26786375"
+	},
+	"item": [
+		{
+			"name": "Usuario",
+			"item": [
+				{
+					"name": "Criar Registro",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Fulano\",\r\n    \"surname\": \"De Tal\",\r\n    \"nickname\":\"Fulaninho\",\r\n    \"email\":\"fulano123@email.com\",\r\n    \"password\":\"54321\",\r\n    \"photo\":\"3x4\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/userRegister/createRegister/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"userRegister",
+								"createRegister",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Registros",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/userRegister/listRegister",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"userRegister",
+								"listRegister"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Registro por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/userRegister/findById/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"userRegister",
+								"findById",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Registro por Nome",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/userRegister/findByName/name",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"userRegister",
+								"findByName",
+								"name"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar Email",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/userRegister/updateEmail/id/user@email.com",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"userRegister",
+								"updateEmail",
+								"id",
+								"user@email.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar Senha",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/userRegister/updatePassword/id/password",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"userRegister",
+								"updatePassword",
+								"id",
+								"password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar Nome",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/userRegister/updateName/id/nome",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"userRegister",
+								"updateName",
+								"id",
+								"nome"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar Sobrenome",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/userRegister/updateSourname/id/surname",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"userRegister",
+								"updateSourname",
+								"id",
+								"surname"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar Apelido",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/userRegister/updateNickname/id/nickname",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"userRegister",
+								"updateNickname",
+								"id",
+								"nickname"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Todos",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Fulano\",\r\n    \"sobrenome\": \"De Tal\",\r\n    \"apelido\":\"Fulaninho\",\r\n    \"email\":\"fulano@email.com\",\r\n    \"senha\":\"54321\",\r\n    \"foto\":\"3x4\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/userRegister/updateRegister/id",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"userRegister",
+								"updateRegister",
+								"id"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Registro",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/userRegister/deleteRegister/id",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"userRegister",
+								"deleteRegister",
+								"id"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Fã Clube",
+			"item": [
+				{
+					"name": "Criar Fan Club",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fanClubName\": \"Teste2\",\r\n    \"fanClubDescription\": \"Fa Clube da Gaming XY\",\r\n    \"registrationDateTime\": \"2022-03-03T10:30:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/fanClub/createFanClub/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fanClub",
+								"createFanClub",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Fan Club",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/fanClub/listFanClub/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fanClub",
+								"listFanClub",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Fan Club por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/fanClub/findFanClubById/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fanClub",
+								"findFanClubById",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Fan Club por Nome",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/fanClub//findFanClubByName/Teste2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fanClub",
+								"",
+								"findFanClubByName",
+								"Teste2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Descrição Fan Club",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fanClubName\": \"Teste2\",\r\n    \"fanClubDescription\": \"Fa Clube da Gaming XY\",\r\n    \"registrationDateTime\": \"2022-03-03T10:30:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/fanClub/updateDescription/{id}/{fanClubDescription}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fanClub",
+								"updateDescription",
+								"{id}",
+								"{fanClubDescription}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Nome do Fan Club",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fanClubName\": \"Teste2\",\r\n    \"fanClubDescription\": \"Fa Clube da Gaming XY\",\r\n    \"registrationDateTime\": \"2022-03-03T10:30:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/fanClub/updateName/{id}/{fanClubName}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fanClub",
+								"updateName",
+								"{id}",
+								"{fanClubName}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Fã Clube",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fanClubName\": \"Teste2\",\r\n    \"fanClubDescription\": \"Fa Clube da Gaming XY\",\r\n    \"registrationDateTime\": \"2022-03-03T10:30:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/fanClub/deleteFanClub/id",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fanClub",
+								"deleteFanClub",
+								"id"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Carteirinha Fã Clube",
+			"item": [
+				{
+					"name": "Criar Carteirinha",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"joiningDate\":\"2023-09-07T10:30:00\", \r\n    \"cardNumber\":\"45655645\",\r\n    \"photoUrl\":\"urldafoto.com\",\r\n    \"cardStatus\": \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/membershipCard/createMembershipCard/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"membershipCard",
+								"createMembershipCard",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Carteirinhas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/membershipCard/listMembershipCard/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"membershipCard",
+								"listMembershipCard",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar por Número de Carteirinha",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/membershipCard/findCardByCardNumber/{cardNumber}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"membershipCard",
+								"findCardByCardNumber",
+								"{cardNumber}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Carteirinha por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/membershipCard/findCardById/{id}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"membershipCard",
+								"findCardById",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Status da Carteirinha",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/membershipCard/updateMembershipCardStatus/13/REQUESTED",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"membershipCard",
+								"updateMembershipCardStatus",
+								"13",
+								"REQUESTED"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Foto da Carteirinha",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/membershipCard/updateMembershipCardPhotoUrl/{id}/{photoUrl}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"membershipCard",
+								"updateMembershipCardPhotoUrl",
+								"{id}",
+								"{photoUrl}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Número da Carteirinha",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/membershipCard/updateMembershipCardNumber/{id}/{cardNumber}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"membershipCard",
+								"updateMembershipCardNumber",
+								"{id}",
+								"{cardNumber}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Carteirinha",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/membershipCard/deleteMembershipCardById/id",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"membershipCard",
+								"deleteMembershipCardById",
+								"id"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin do Fã Clube",
+			"item": [
+				{
+					"name": "Criar Admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Fulano\",\r\n    \"surname\": \"De Tal\",\r\n    \"email\":\"fulano@email.com\",\r\n    \"password\":\"54321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/admin/createFanClubAdmin/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"createFanClubAdmin",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Admin",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Fulano\",\r\n    \"surname\": \"De Tal\",\r\n    \"email\":\"fulano@email.com\",\r\n    \"password\":\"54321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/admin/listFanClubAdmin/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"listFanClubAdmin",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Admin por ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Fulano\",\r\n    \"surname\": \"De Tal\",\r\n    \"email\":\"fulano@email.com\",\r\n    \"password\":\"54321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/admin/findFanClubAdminById/{id}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"findFanClubAdminById",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Admin por Nome",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Fulano\",\r\n    \"surname\": \"De Tal\",\r\n    \"email\":\"fulano@email.com\",\r\n    \"password\":\"54321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/admin/findFanClubAdminByName/{name}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"findFanClubAdminByName",
+								"{name}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Email do Admin",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Fulano\",\r\n    \"surname\": \"De Tal\",\r\n    \"email\":\"fulano@email.com\",\r\n    \"password\":\"54321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/admin/updateFanClubAdminEmail/{id}/{email}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"updateFanClubAdminEmail",
+								"{id}",
+								"{email}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Nome do Admin",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Fulano\",\r\n    \"surname\": \"De Tal\",\r\n    \"email\":\"fulano@email.com\",\r\n    \"password\":\"54321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/admin/updateFanClubAdminName/{id}/{name}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"updateFanClubAdminName",
+								"{id}",
+								"{name}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Sobrenome do Admin",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Fulano\",\r\n    \"surname\": \"De Tal\",\r\n    \"email\":\"fulano@email.com\",\r\n    \"password\":\"54321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/admin/updateFanClubAdminSurname/{id}/{surname}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"updateFanClubAdminSurname",
+								"{id}",
+								"{surname}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar todos os Admin",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Fulano\",\r\n    \"surname\": \"De Tal\",\r\n    \"email\":\"fulano@email.com\",\r\n    \"password\":\"54321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/admin/updateFanClubAdmin/{id}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"updateFanClubAdmin",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Admin por ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Fulano\",\r\n    \"surname\": \"De Tal\",\r\n    \"email\":\"fulano@email.com\",\r\n    \"password\":\"54321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/admin/deleteFanClubAdmin/{id}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"deleteFanClubAdmin",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Criação de Páginas",
+			"item": [
+				{
+					"name": "Criar Pagina de Conteudo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"NOTICIA\",\r\n    \"content\": \"bla bla bla\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/contentPage/createContentPage/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"contentPage",
+								"createContentPage",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Paginas de conteudo",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"NOTICIA\",\r\n    \"content\": \"bla bla bla\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/contentPage/listContentPage/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"contentPage",
+								"listContentPage",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Pag de Conteudo por ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"NOTICIA\",\r\n    \"content\": \"bla bla bla\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/contentPage/findContentPageById/{id}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"contentPage",
+								"findContentPageById",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Título da Página",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"NOTICIA\",\r\n    \"content\": \"bla bla bla\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/contentPage/updateContentPageTitle/{id}/{title}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"contentPage",
+								"updateContentPageTitle",
+								"{id}",
+								"{title}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Conteúdo da Pagina",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"NOTICIA\",\r\n    \"content\": \"bla bla bla\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/contentPage/updatePageContent/{id}/{content}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"contentPage",
+								"updatePageContent",
+								"{id}",
+								"{content}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Página de Conteudo",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"NOTICIA\",\r\n    \"content\": \"bla bla bla\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/contentPage/deletePageContent/{id}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"contentPage",
+								"deletePageContent",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

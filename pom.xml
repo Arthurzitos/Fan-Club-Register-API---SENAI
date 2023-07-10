@@ -12,7 +12,7 @@
 	<artifactId>apisenai</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>apisenai</name>
-	<description>api para aula de dsw senai</description>
+	<description>api Fan Club senai</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
