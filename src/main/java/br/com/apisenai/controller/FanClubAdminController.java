@@ -62,7 +62,7 @@ public class FanClubAdminController {
         return new ResponseEntity<>("Senha atualizada com sucesso!", HttpStatus.CREATED);
     }
 
-    @PatchMapping("/updateFanClubAdminNome/{id}/{name}")
+    @PatchMapping("/updateFanClubAdminName/{id}/{name}")
     public ResponseEntity<String> updateName(@PathVariable String name, @PathVariable Long id){
         try {
             fanClubAdminService.updateFanClubAdminName(name, id);
@@ -72,8 +72,8 @@ public class FanClubAdminController {
         return new ResponseEntity<>("Nome atualizado com sucesso!", HttpStatus.CREATED);
     }
 
-    @PatchMapping("/updateFanClubAdminSobrenome/{id}/{surname}")
-    public ResponseEntity<String> updateSobreNome(@PathVariable String surname, @PathVariable Long id){
+    @PatchMapping("/updateFanClubAdminSurname/{id}/{surname}")
+    public ResponseEntity<String> updateSurname(@PathVariable String surname, @PathVariable Long id){
         try {
             fanClubAdminService.updateFanClubAdminSurname(surname, id);
         }catch (Exception exception){

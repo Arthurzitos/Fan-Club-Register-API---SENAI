@@ -16,7 +16,11 @@ public class CardRequest implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long userId;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id") // id do usuário
+    private UserRegistration user;
+
     private LocalDate requestDate;
     private CardStatus cardStatus;
     public enum CardStatus {

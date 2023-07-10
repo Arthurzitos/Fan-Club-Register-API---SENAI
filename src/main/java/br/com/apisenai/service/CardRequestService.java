@@ -2,9 +2,11 @@ package br.com.apisenai.service;
 
 import br.com.apisenai.Repository.CardRequestRepository;
 import br.com.apisenai.domain.entity.CardRequest;
+import br.com.apisenai.domain.entity.UserRegistration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -12,13 +14,16 @@ public class CardRequestService {
 
     @Autowired
     CardRequestRepository cardRequestRepository;
-    public void setCardStatus(Long id, CardRequest.CardStatus cardStatus) {
-        CardRequest cardRequest = cardRequestRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("Nenhuma carteirinha com id: " + id + " foi encontrada."));
 
-        cardRequest.setCardStatus(cardStatus);
+    public CardRequest createCardRequest(UserRegistration user, CardRequest.CardStatus cardStatus) {
+        CardRequest cardRequest = CardRequest.builder()
+                .user(user)
+                .requestDate(LocalDate.now())
+                .cardStatus(cardStatus)
+                .build();
+
+        return cardRequestRepository.save(cardRequest);
     }
-
     public List<CardRequest> findAll() {
         return cardRequestRepository.findAll();
     }
