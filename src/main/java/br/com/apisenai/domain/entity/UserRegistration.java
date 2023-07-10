@@ -14,14 +14,14 @@ import java.io.Serializable;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Registro implements Serializable {
+public class UserRegistration implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long Id;
-    private String nome;
-    private String sobrenome;
-    private String apelido;
+    private Long id;
+    private String name;
+    private String surname;
+    private String nickname;
     private String email;
-    private String senha;
-    private String foto;
+    private String password;
+    private String photo;
 }
