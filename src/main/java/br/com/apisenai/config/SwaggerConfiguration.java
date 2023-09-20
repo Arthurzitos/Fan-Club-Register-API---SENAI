@@ -2,7 +2,6 @@ package br.com.apisenai.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import springfox.documentation.RequestHandler;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -22,16 +21,17 @@ public class SwaggerConfiguration {
                 .apiInfo(this.infosApi());
     }
 
-    private Contact getContato(){
+    private Contact getContato() {
         return new Contact("Arthur, Amanda, Gustavo e Leonardo",
                 "br.com.apisenai",
                 "email@email.com");
     }
 
-    private ApiInfo infosApi(){
+    private ApiInfo infosApi() {
         return new ApiInfoBuilder().version("1.0")
                 .title("Fan Club Register API")
-                .description("API desenvolvida com finalidades academicas. O contexto proposto pelo grupo foi o cadastro e adesão de novos membros para um fã clube de um time de e-esports")
+                .description(
+                        "API desenvolvida com finalidades academicas. O contexto proposto pelo grupo foi o cadastro e adesão de novos membros para um fã clube de um time de e-esports")
                 .contact(this.getContato())
                 .termsOfServiceUrl("Termo de uso: Open Source")
                 .license("Licenciada para SENAI")

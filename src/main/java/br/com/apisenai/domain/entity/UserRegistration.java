@@ -24,4 +24,5 @@ public class UserRegistration implements Serializable {
     private String email;
     private String password;
     private String photo;
+    private String gender;
 }

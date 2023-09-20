@@ -53,7 +53,10 @@ public class UserRegistrationService {
     public void updateRegisterNickname(String nickname, Long id) {
         userRegistrationRepository.updateNickname(nickname, id);
     }
-    
+
+    public void updateRegisterGender(String gender, Long id) {
+        userRegistrationRepository.updateGender(gender, id);
+    }
 
     public void updateRegister(UserRegistration userRegistration, Long id) {
         userRegistration.setId(id);
